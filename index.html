@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c4a6e" />
+    <meta name="description" content="Pesquisa simplificada de medicamentos no REME/DF" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>REME/DF - Pesquisa de Medicamentos</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>REME/DF</h1>
+      <p class="tagline">Relação de Medicamentos do Distrito Federal</p>
+    </header>
+
+    <div class="search-card">
+      <div class="search-row">
+        <input
+          id="query"
+          class="search-input"
+          type="search"
+          placeholder="Digite o nome do medicamento…"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+        />
+        <button id="search" class="search-btn" type="button">Pesquisar</button>
+      </div>
+      <p id="status" class="status-line" aria-live="polite"></p>
+    </div>
+
+    <div class="results-area">
+      <output id="result" aria-live="polite"></output>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

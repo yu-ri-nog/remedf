@@ -1,0 +1,264 @@
+:root {
+  --primary: #0369a1;
+  --primary-dark: #0c4a6e;
+  --primary-light: #e0f2fe;
+  --accent: #059669;
+  --accent-bg: #f0fdf4;
+  --accent-text: #166534;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --bg: #f1f5f9;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(3, 105, 161, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  padding: 1rem 1rem 3rem;
+  line-height: 1.5;
+}
+
+/* ── Header ── */
+.app-header {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.app-header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.app-header .tagline {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+/* ── Search Card ── */
+.search-card {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 1.25rem 1.5rem;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.12);
+}
+
+.search-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+
+.search-btn:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.search-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.search-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status-line {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  text-align: center;
+  min-height: 1rem;
+}
+
+/* ── Results ── */
+.results-area {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.result-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+/* ── Result Card ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--primary);
+  transition: box-shadow 0.15s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(3, 105, 161, 0.12);
+}
+
+.card-title {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 0.2rem;
+}
+
+.card-title mark {
+  background: #fef08a;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.card-group {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+.card-pharmacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: var(--accent-bg);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.pharmacy-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  padding-top: 1px;
+  flex-shrink: 0;
+}
+
+.pharmacy-value {
+  font-size: 0.85rem;
+  color: var(--accent-text);
+  line-height: 1.4;
+}
+
+/* ── Empty / Hint states ── */
+.empty-state {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+}
+
+.empty-state .hint {
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  color: #94a3b8;
+}
+
+.hint-msg {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --white: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --primary-light: #0c4a6e;
+    --accent-bg: #052e16;
+    --accent-text: #4ade80;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-title mark {
+    background: #a16207;
+    color: #fef9c3;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .app-header h1 { font-size: 1.75rem; }
+  .search-card { padding: 1rem; }
+  .search-btn { padding: 0.7rem 0.9rem; }
+}
